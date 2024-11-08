@@ -8,8 +8,9 @@ function App() {
  const [bookMarks, setBookMarks] = useState([])
  const[spentTime, setSpentTime]= useState(0)
 
- const sumOfST= time =>{
+ const sumOfST= (time, id) =>{
         setSpentTime(spentTime + time);
+        setBookMarks(bookMarks.filter(bookmark=> bookmark.id!==id))        
  }
   const handleAddToBookmark =(blog)=>{
         const newBookmarks = [...bookMarks, blog];

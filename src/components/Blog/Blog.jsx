@@ -4,7 +4,7 @@ const Blog = ({ blog , handleAddToBookmark , sumOfST}) => {
 
 
 
-    const { cover_img, blogger_img, blogger_name, upload_time, hashtags, reading_time, blog_name } = blog
+    const {id, cover_img, blogger_img, blogger_name, upload_time, hashtags, reading_time, blog_name } = blog
     return (
         <div className='mb-12 space-y-2'>
             <img src={cover_img} alt="" />
@@ -20,7 +20,7 @@ const Blog = ({ blog , handleAddToBookmark , sumOfST}) => {
             </div>
             <h3 className='text-3xl'>{blog_name}</h3>
             <p className='text-xs'>{hashtags}</p>
-            <p onClick={()=>sumOfST(reading_time)} className='text-sm font-bold text-purple-700 hover:text-purple-400 underline'>Mark as read</p>
+            <p onClick={()=>sumOfST(reading_time, id)} className='text-sm font-bold text-purple-700 hover:text-purple-400 underline'>Mark as read</p>
 
         </div>
     );
